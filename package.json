@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --no-colors --watch",
+    "dev": "pm2-dev index.js"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,10 @@
     "feathers-passport": "^0.1.2"
   },
   "devDependencies": {
+    "babel-core": "^6.0.20",
     "chai": "^3.4.0",
     "mocha": "^2.3.3",
+    "pm2": "^0.15.9",
     "supertest": "^1.1.0"
   }
 }

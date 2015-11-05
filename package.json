@@ -21,8 +21,10 @@
     "babel": "^6.0.15",
     "body-parser": "^1.14.1",
     "feathers": "^1.1.1",
+    "feathers-hooks": "^0.5.1",
     "feathers-mongodb": "^1.0.2",
-    "feathers-passport": "^0.1.2"
+    "feathers-mongoose": "^2.0.0",
+    "feathers-passport-jwt": "^1.0.6"
   },
   "devDependencies": {
     "babel-core": "^6.0.20",

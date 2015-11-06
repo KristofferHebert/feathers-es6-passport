@@ -1,7 +1,7 @@
 'use strict'
 
 const ROOT = process.env.PWD
-const SECRET = require(ROOT + '/config/locals')
+const SECRET = require(ROOT + '/server/config/locals')
 let feathers = require('feathers')
 let hooks = require('feathers-hooks')
 let feathersPassportJwt = require('feathers-passport-jwt');

@@ -5,8 +5,6 @@ let app = feathers()
 
 let db = require('feathers-mongoose')
 
-
-
 // Set Default
 const PORT = process.env.PORT || 3001
 

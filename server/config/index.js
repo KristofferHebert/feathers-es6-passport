@@ -1,12 +1,11 @@
 'use strict'
 
 const ROOT = process.env.PWD
-const SECRET = require(ROOT + '/server/config/locals')
+const LOCALS = require(ROOT + '/server/config/locals')
 let feathers = require('feathers')
 let hooks = require('feathers-hooks')
 let feathersPassportJwt = require('feathers-passport-jwt');
 let bodyParser = require('body-parser')
-
 
 module.exports = function(app){
     app.configure(feathers.rest())
@@ -15,7 +14,7 @@ module.exports = function(app){
       .use(bodyParser.json())
       .use(bodyParser.urlencoded({extended: true}))
       .configure(feathersPassportJwt({
-          secret: SECRET
+          secret: LOCALS.secret
       }))
       .use('/', feathers.static(ROOT + '/public'))
 

@@ -8,13 +8,12 @@ let feathersPassportJwt = require('feathers-passport-jwt');
 let bodyParser = require('body-parser')
 let winston = require('winston')
 let logger = require('feathers-logger')
-
 module.exports = function(app){
     app.configure(feathers.rest())
       //.configure(feathers.socketio())
       .configure(hooks())
       .use(bodyParser.json())
-      .use(bodyParser.urlencoded({extended: true}))
+      .use(bodyParser.urlencoded({ extended: true }))
       .configure(feathersPassportJwt({
           secret: LOCALS.secret
       }))

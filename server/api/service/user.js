@@ -33,15 +33,6 @@ let options = {
 
 let User = new model('user', UserModel, options);
 
-
-//Create Power User
-// User.create({
-// 	email: LOCALS.adminEmail,
-// 	password: LOCALS.adminPassword
-// }, {}, function(error, user) {
-// 	console.log('Created default user', user);
-// });
-
 module.exports = function() {
 	return User
 }

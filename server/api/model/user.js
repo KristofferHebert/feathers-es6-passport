@@ -30,7 +30,6 @@ let options = {
 
 }
 
-
 let UserService = new model('user', UserModel, options)
 
 module.exports = function(){ return UserService }

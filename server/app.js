@@ -15,5 +15,3 @@ require('../server/api/routes')(app)
 app.info('Server listening on', PORT)
 
 app.listen(PORT)
-
-// export default app

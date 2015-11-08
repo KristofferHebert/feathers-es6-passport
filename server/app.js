@@ -12,8 +12,8 @@ require('./config')(app)
 // Configure API
 require('../server/api/routes')(app)
 
-// Launch server
-console.log('Server listening on', PORT)
+app.info('Server listening on', PORT)
+
 app.listen(PORT)
 
 // export default app

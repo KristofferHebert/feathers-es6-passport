@@ -31,8 +31,6 @@ let options = {
 }
 
 
-let User = new model('user', UserModel, options);
+let UserService = new model('user', UserModel, options)
 
-module.exports = function() {
-	return User
-}
+module.exports = function(){ return UserService }

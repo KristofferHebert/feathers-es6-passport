@@ -1,6 +1,6 @@
 'use strict'
 const ROOT = process.env.PWD
-let model = require(ROOT + '/server/config/db')
+let Connection = require(ROOT + '/server/config/db')
 let LOCALS = require(ROOT + '/server/config/locals')
 
 let UserModel = {
@@ -27,9 +27,9 @@ let UserModel = {
 }
 
 let options = {
-
+	db: Connection.dbName
 }
 
-let UserService = new model('user', UserModel, options)
+let UserService = new Connection.db('user', UserModel, options)
 
 module.exports = function(){ return UserService }

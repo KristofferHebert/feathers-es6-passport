@@ -9,6 +9,13 @@ describe('Testing Auth with API', function(){
 			.get('/api/users')
 			.expect(500, done)
 	})
+
+    it('responds to /api/user request', function(done){
+		server
+			.post('/api/login')
+			.expect(500, done)
+	})
+
 	it('404 everything else', function(done){
 		server
 			.get('/foo/bar')

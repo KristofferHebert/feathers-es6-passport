@@ -35,7 +35,7 @@ module.exports = function(app) {
 			secret: LOCALS.secret
 		}))
 		.use('/', feathers.static(ROOT + '/public'))
-		.configure(logger(winstonLogger))
+	    .configure(logger(winstonLogger))
 
 	return app
 }

@@ -4,9 +4,13 @@ let db = require('feathers-mongoose')
 // let db = require('feathers-memory')
 // let db = require('feathers-postgresql')
 
-// let options = {
-//     "db": dbName
-// }
+let LOCALS = require('./locals')
 
+let dbName = (process.env.NODE_ENV === "production") ? LOCALS.productionDB : LOCALS.stagingDB
 
-module.exports = db
+console.log('Using DB ', dbName)
+
+module.exports = {
+    "db" : db,
+    "dbName" : dbName
+}

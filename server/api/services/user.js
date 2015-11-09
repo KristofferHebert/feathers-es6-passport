@@ -1,8 +1,12 @@
 'use strict'
 
 let UserModel = require('../model/user')
+let feathersPassportJwt = require('feathers-passport-jwt')
+let requireAuth = feathersPassportJwt.hooks.requireAuth
+let hashPassword = feathersPassportJwt.hooks.hashPassword
+let lowercaseEmail = feathersPassportJwt.hooks.lowercaseEmail
 
-let hashPassword = require('feathers-passport-jwt').hooks.hashPassword
+
 let LOCALS = require('../../config/locals')
 
 module.exports = function(app, path){
@@ -14,17 +18,12 @@ module.exports = function(app, path){
                 message: err.message
             })
         })
-        
+
     	let UserService = app.service(path)
 
         UserService.before({
-    		all: function(hook, next) {
-    			if (!hook.params.user) {
-    				return next(new Error('You are not logged in'));
-    			}
-    			next();
-    		},
-    		create: hashPassword
+    		all: requireAuth,
+    		create: [hashPassword, lowercaseEmail]
     	})
 
     	// Create Power User

@@ -2,5 +2,7 @@
 module.exports = {
     secret: "YOUR SECRET HERE",
     adminEmail: "test@testemail.com",
-    adminPassword: "test"
+    adminPassword: "test",
+    stagingDB: "STAGING_feathers",
+    productionDB: "PRODUCTION_feathers"
 }

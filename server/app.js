@@ -3,7 +3,7 @@
 let feathers = require('feathers')
 let app = feathers()
 
-// Set Default
+// Set Default Port
 const PORT = process.env.PORT || 3001
 
 // Configure Server

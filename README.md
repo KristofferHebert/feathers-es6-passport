@@ -1,1 +1,1 @@
-API ES6 with JWT authentication
+Feathers API with JWT authentication

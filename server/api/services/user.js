@@ -5,8 +5,6 @@ let feathersPassportJwt = require('feathers-passport-jwt')
 let requireAuth = feathersPassportJwt.hooks.requireAuth
 let hashPassword = feathersPassportJwt.hooks.hashPassword
 let lowercaseEmail = feathersPassportJwt.hooks.lowercaseEmail
-
-
 let LOCALS = require('../../config/locals')
 
 module.exports = function(app, path){

@@ -10,12 +10,12 @@ let LOCALS = require('../../config/locals')
 module.exports = function(app, path){
 
         app.use(path, UserModel())
-        .use(function(err, req, res, next) {
-            res.status(500)
-            res.json({
-                message: err.message
-            })
-        })
+        // .use(function(err, req, res, next) {
+        //     res.status(500)
+        //     res.json({
+        //         message: err.message
+        //     })
+        // })
 
     	let UserService = app.service(path)
 

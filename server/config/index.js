@@ -4,7 +4,7 @@ const ROOT = process.env.PWD
 const LOCALS = require(ROOT + '/server/config/locals')
 let feathers = require('feathers')
 let hooks = require('feathers-hooks')
-let feathersPassportJwt = require('feathers-passport-jwt')
+let feathersAuth = require('feathers-auth')
 let bodyParser = require('body-parser')
 let winston = require('winston')
 let logger = require('feathers-logger')
@@ -31,7 +31,7 @@ module.exports = function(app) {
 		.use(bodyParser.urlencoded({
 			extended: true
 		}))
-		.configure(feathersPassportJwt({
+		.configure(feathersAuth({
 			secret: LOCALS.secret
 		}))
 		.use('/', feathers.static(ROOT + '/public'))

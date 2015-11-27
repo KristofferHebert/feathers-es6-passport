@@ -1,10 +1,10 @@
 'use strict'
 
 let UserModel = require('../model/user')
-let feathersPassportJwt = require('feathers-passport-jwt')
-let requireAuth = feathersPassportJwt.hooks.requireAuth
-let hashPassword = feathersPassportJwt.hooks.hashPassword
-let lowercaseEmail = feathersPassportJwt.hooks.lowercaseEmail
+let feathersAuth = require('feathers-authentication')
+let requireAuth = feathersAuth.hooks.requireAuth
+let hashPassword = feathersAuth.hooks.hashPassword
+let lowercaseEmail = feathersAuth.hooks.lowercaseEmail
 let LOCALS = require('../../config/locals')
 
 module.exports = function(app, path){
